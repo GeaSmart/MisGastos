@@ -71,11 +71,6 @@ body {
 }
 /* CUSTOM CSS
 ---------------------------------------------------*/
-/* Change input control border color */
-.form-control, .input-group-text {
-    border: 1px solid #0080ff;
-}
-
 a.btn:hover {
     cursor: pointer !important;
 }

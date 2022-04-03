@@ -25,9 +25,9 @@ namespace MisGastos.Models
         public decimal Monto { get; set; }
 
         [Column(TypeName = "datetime")]
-        [Required(ErrorMessage = "Ingrese la fecha de inicio")]
+        [Required(ErrorMessage = "Ingrese la fecha")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
-        [Display(Name = "Fecha de inicio")]        
+        [Display(Name = "Fecha del gasto")]        
         public DateTime Fecha { get; set; }
     }
 }
