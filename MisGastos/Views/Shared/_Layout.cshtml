@@ -53,6 +53,11 @@
         </div>
     </div>
 
+    @*SPIN*@
+    <div class="loaderbody" id="loaderbody">
+        <div class="loader"></div>
+    </div>
+
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2022 - MisGastos - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
@@ -61,6 +66,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/notify.min.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

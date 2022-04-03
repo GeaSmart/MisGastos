@@ -3,6 +3,16 @@
 
 // Write your JavaScript code.
 
+$(function () {
+    $("#loaderbody").addClass('hide');
+
+    $(document).bind('ajaxStart', function () {
+        $("#loaderbody").removeClass('hide');
+    }).bind('ajaxStop', function () {
+        $("#loaderbody").addClass('hide');
+    });
+});
+
 function showModal(url, title) {
     $.ajax(
         {
@@ -50,3 +60,29 @@ function jQueryAjaxPost(form) {
     return false;
 }
 
+function jQueryAjaxDelete(form) {
+    if (confirm('¿Está seguro de eliminar el registro?')) {
+        try {
+            $.ajax({
+                type: 'DELETE',
+                url: form.action,
+                data: new FormData(form),
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    $("#view-all").html(response.html);
+                    //notify notification
+                    $.notify('Registro eliminado', { globalPosition: 'top-center', className: 'success' });
+                },
+                error: function (error) {
+                    console.log(error)
+                }
+            })
+        }
+        catch (ex) {
+            console.log(ex);
+        }
+        return false;
+    }
+    return false;
+}

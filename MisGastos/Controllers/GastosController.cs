@@ -69,7 +69,7 @@ namespace MisGastos.Controllers
 
             context.Gastos.Remove(gasto);
             await context.SaveChangesAsync();
-            return View("Index", await context.Gastos.ToListAsync());
+            return Json(new { html = RenderRazor.RenderRazorViewToString(this, "_VerTodos", context.Gastos.ToList()) });
         }
     }
 }

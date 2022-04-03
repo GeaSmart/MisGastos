@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Gasto>
 <div class="page">
 
-    <h1 class="page-header text-center">Listado de Gastos <i class="fas fa-comment-money text-primary"></i> </h1>
+    <h1 class="page-header text-center">Listado de Gastos <i class="fas fa-money-bill text-primary"></i> </h1>
 
     <div class="breadcrumb">
         <a onclick="showModal('@Url.Action("AddOrEdit","Gastos",new { Id = 0 },Context.Request.Scheme)', 'Nuevo Gasto')" class="btn btn-primary text-white">Agregar nuevo</a>
