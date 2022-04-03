@@ -55,7 +55,7 @@ namespace MisGastos
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Gastos}/{action=Index}/{id?}");
             });
         }
     }

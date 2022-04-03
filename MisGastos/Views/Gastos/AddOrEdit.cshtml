@@ -1,0 +1,51 @@
+﻿@model Gasto
+
+@{
+    Layout = null;
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="AddOrEdit" asp-route-id="@Model.Id" onsubmit="return xxx" autocomplete="off">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <input type="hidden" asp-for="Id" />            
+
+            <div class="form-group">
+                <label asp-for="Descripcion" class="control-label"></label>
+                <input asp-for="Descripcion" class="form-control" />
+                <span asp-validation-for="Descripcion" class="text-danger"></span>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Monto" class="control-label"></label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><i class="fas fa-dollar-sign"></i></div>
+                            </div>
+                            <input asp-for="Monto" class="form-control" />
+                        </div>
+                        <span asp-validation-for="Monto" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Fecha" class="control-label"></label>                        
+                        @Html.TextBoxFor(x => x.Fecha, "{0:dd/MM/yyyy}", new { @class = "form-control datepicker" })
+                        <span asp-validation-for="Fecha" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+                        
+
+            <div class="row">
+                <div class="col-md-12">
+                    <input type="submit" value="Enviar" class="btn btn-primary btn-block" />
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
