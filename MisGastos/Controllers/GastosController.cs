@@ -25,6 +25,7 @@ namespace MisGastos.Controllers
             return View(gastos);
         }
 
+        [NoDirectAccess]
         [HttpGet]
         public async Task<ActionResult> AddOrEdit(int id = 0)
         {
