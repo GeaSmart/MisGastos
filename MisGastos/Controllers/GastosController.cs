@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using MisGastos.Helpers;
 using MisGastos.Models;
 using System;
 using System.Collections.Generic;
@@ -54,8 +55,9 @@ namespace MisGastos.Controllers
                     context.Gastos.Update(gasto);
                     await context.SaveChangesAsync();
                 }
+                return Json(new { isValid = true, html = RenderRazor.RenderRazorViewToString(this, "_VerTodos", context.Gastos.ToList()) });
             }
-            return View(gasto);
+            return Json(new { isValid = false, html = RenderRazor.RenderRazorViewToString(this, "AddOrEdit", gasto) });
         }
 
         [HttpDelete]

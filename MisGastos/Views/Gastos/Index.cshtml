@@ -7,29 +7,10 @@
         <a onclick="showModal('@Url.Action("AddOrEdit","Gastos",new { Id = 0 },Context.Request.Scheme)', 'Nuevo Gasto')" class="btn btn-primary text-white">Agregar nuevo</a>
     </div>
 
-    <table class="table table-hover">
-        <thead>
-            <tr>
-                <th>@Html.DisplayNameFor(x => x.Descripcion)</th>
-                <th>@Html.DisplayNameFor(x => x.Fecha)</th>
-                <th>@Html.DisplayNameFor(x => x.Monto)</th>
-            </tr>
-        </thead>
-        <tbody>
-            @if (Model != null)
-            {
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>@item.Descripcion</td>
-                        <td>@item.Fecha</td>
-                        <td>@item.Monto</td>
-                        <td>Opciones...</td>
-                    </tr>
-                }
-            }
-        </tbody>
-    </table>
+    <div id="view-all">
+        @await Html.PartialAsync("_VerTodos", Model)
+    </div>
+
     @section Scripts{
         @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     }

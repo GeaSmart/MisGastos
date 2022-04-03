@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Gasto>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(x => x.Descripcion)</th>
+            <th>@Html.DisplayNameFor(x => x.Monto)</th>
+            <th>@Html.DisplayNameFor(x => x.Fecha)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in @Model)
+        {
+            <tr>
+                <td>@item.Descripcion</td>
+                <td>@item.Monto</td>
+                <td>@item.Fecha.ToShortDateString()</td>
+                <td>...</td>
+            </tr>
+        }
+    </tbody>
+</table>
